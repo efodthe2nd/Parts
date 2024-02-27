@@ -1,0 +1,74 @@
+{
+    "Generator.38656915-3666-48fd-b216-e8996e165616": {
+        "id": "38656915-3666-48fd-b216-e8996e165616",
+        "created_at": "2023-08-18T14:37:53.256252",
+        "updated_at": "2023-08-18T14:37:53.256471",
+        "name": "Friday",
+        "__class__": "Generator"
+    },
+    "Generator.5adab845-8542-4c8e-abf2-5ea7ce7893a4": {
+        "id": "5adab845-8542-4c8e-abf2-5ea7ce7893a4",
+        "created_at": "2023-08-18T14:37:53.257368",
+        "updated_at": "2023-08-18T14:37:53.257611",
+        "name": "Saturday",
+        "__class__": "Generator"
+    },
+    "Part.cf330f53-04e9-4632-84c4-ab05dad976a5": {
+        "id": "cf330f53-04e9-4632-84c4-ab05dad976a5",
+        "created_at": "2023-08-18T14:37:53.259306",
+        "updated_at": "2023-08-18T14:37:53.259798",
+        "generator_id": "38656915-3666-48fd-b216-e8996e165616",
+        "name": "wire",
+        "__class__": "Part"
+    },
+    "Part.d23d6237-1969-4225-9c14-059139497bb5": {
+        "id": "d23d6237-1969-4225-9c14-059139497bb5",
+        "created_at": "2023-08-18T14:37:53.261881",
+        "updated_at": "2023-08-18T14:37:53.262453",
+        "generator_id": "38656915-3666-48fd-b216-e8996e165616",
+        "name": "wire frame",
+        "__class__": "Part"
+    },
+    "Generator.1ebee30a-7082-456f-a02a-0c2e1761ea87": {
+        "id": "1ebee30a-7082-456f-a02a-0c2e1761ea87",
+        "created_at": "2024-02-24T10:46:31.456643",
+        "updated_at": "2024-02-24T10:46:31.458757",
+        "name": "Firman",
+        "__class__": "Generator"
+    },
+    "Generator.d2659c73-8ef5-4127-8188-0268410a2402": {
+        "id": "d2659c73-8ef5-4127-8188-0268410a2402",
+        "created_at": "2024-02-24T10:47:14.894157",
+        "updated_at": "2024-02-24T10:47:14.894212",
+        "name": "elepaq",
+        "__class__": "Generator"
+    },
+    "Generator.28592309-9bc3-49c6-b032-781014ee8695": {
+        "id": "28592309-9bc3-49c6-b032-781014ee8695",
+        "created_at": "2024-02-24T10:47:45.833484",
+        "updated_at": "2024-02-24T10:47:45.833530",
+        "name": "Honda",
+        "__class__": "Generator"
+    },
+    "Generator.d639518f-e864-4874-8ffa-ff42d6018a8c": {
+        "id": "d639518f-e864-4874-8ffa-ff42d6018a8c",
+        "created_at": "2024-02-24T10:49:30.148728",
+        "updated_at": "2024-02-24T10:49:30.148778",
+        "name": "Toyota",
+        "__class__": "Generator"
+    },
+    "Generator.64a59e2e-ed53-4400-b5a0-9e620d2b26dd": {
+        "id": "64a59e2e-ed53-4400-b5a0-9e620d2b26dd",
+        "created_at": "2024-02-24T10:50:10.215087",
+        "updated_at": "2024-02-24T10:50:10.215144",
+        "name": "Mikano",
+        "__class__": "Generator"
+    },
+    "Manufacturer.dbbf7017-c1cb-400e-a971-9de6e5d67a03": {
+        "id": "dbbf7017-c1cb-400e-a971-9de6e5d67a03",
+        "created_at": "2024-02-27T09:44:40.250413",
+        "updated_at": "2024-02-27T09:44:40.251135",
+        "name": "Siemec",
+        "__class__": "Manufacturer"
+    }
+}
