@@ -106,15 +106,25 @@ class PartCommand(cmd.Cmd):
     else:
       id_ = arg[0] + '.' + arg[1]
       try:
-        with open('file.json', 'r', encoding='utf-8') as f:
-          objs = json.loads(f.read())
-        if id_ in objs:
-          out = objs[id_]
-          name = out['__class__']
-          base = eval(f"{name}(**out)")
-          print(base)
-        else:
-          print("** no instance found **")
+        if os.getenv('MECH_TYPE_STORAGE') == 'db':
+          db_storage = DBStorage()
+          objs = db_storage.all()
+          key = id_
+          if key in objs:
+            print(objs[key])
+          else:
+            print("** no instance found **")
+        
+        else: 
+          with open('file.json', 'r', encoding='utf-8') as f:
+            objs = json.loads(f.read())
+          if id_ in objs:
+            out = objs[id_]
+            name = out['__class__']
+            base = eval(f"{name}(**out)")
+            print(base)
+          else:
+            print("** no instance found **")
       except Exception:
         print("** no instance found **")
 
