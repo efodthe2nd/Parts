@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 '''database storage engine'''
 
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine, insert, exc
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.part import Part
 from models.base_model import Base
-from models.generator import Generator
+from models.generator import Generator, generator_part
 from models.manufacturer import Manufacturer
 from os import getenv
 
@@ -82,6 +82,16 @@ class DBStorage:
     except Exception as e:
         print(f"Error deleting object: {e}")
         self.__session.rollback()
+  
+  def link(self, gen_id, part_id):
+     '''inserts into generator_part table'''
+     stmt = insert(generator_part).values(generator_id=gen_id, part_id=part_id)
+     try:
+      self.__session.execute(stmt)
+      self.__session.commit()
+     except exc.IntegrityError:
+      self.__session.rollback()
+
 
 
   def reload(self):

@@ -48,6 +48,7 @@ class PartCommand(cmd.Cmd):
       'show': self.do_show,
       'destroy': self.do_destroy,
       'update': self.get_update,
+      'link': self.do_link
     }
     arg = self.parse_input(line).split()
 
@@ -309,6 +310,24 @@ class PartCommand(cmd.Cmd):
       print(cnt)
     except Exception:
       print(cnt)
+  
+  def do_link(self, line):
+    """Link a Generator to a Part."""
+    try:
+      id_1, id_2 = line.split()
+    except ValueError:
+      print("Invalid syntax. Use: link Generator.[id] Part.[id]")
+      return
+    model_1, model_id_1 = id_1.split('.')
+    model_2, model_id_2 = id_2.split('.')
+    if model_1 != 'Generator' or model_2 != 'Part':
+      print("Invalid models. Use: link Generator.[id] Part.[id]")
+      return
+    if storage.link(model_id_1, model_id_2):
+      storage.save()
+      print(f"Linked Generator {model_id_1} to Part {model_id_2}.")
+    else:
+      print("Error: Duplicate entry. Entry already exists")
   
 
 if __name__ == '__main__':
