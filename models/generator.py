@@ -32,6 +32,7 @@ class Generator(BaseModel, Base):
   else:
     name = ""
     manufacturer_id = ""
+    part_ids = []
 
     @property
     def parts(self):
@@ -40,12 +41,8 @@ class Generator(BaseModel, Base):
          FileStorage relationship between Generator and Part
       '''
       from models import storage
-      related_parts = []
       parts = storage.all(Part)
-      for part in parts.values():
-        if part.generator_id == self.id:
-          related_parts.append(part)
-      return related_parts
+      return [part for part in parts.values() if self.id in part.generator_ids]
 
 
     @parts.setter
@@ -54,7 +51,7 @@ class Generator(BaseModel, Base):
          atrribute parts_ids, accepts only 
          Part objects
       '''
-      if obj is not None:
-        if isinstance(obj, Part):
-          if obj.id not in self.part_ids:
-            self.part_ids.append(obj.id)
+      if obj is not None and isinstance(obj, Part):
+        if obj.id not in self.part_ids:
+          self.part_ids.append(obj.id)
+  

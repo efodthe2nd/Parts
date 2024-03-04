@@ -19,3 +19,18 @@ class Part(BaseModel, Base):
   else:
     name = ""
     price = ""
+    generator_ids = []
+
+    @property
+    def generators(self):
+      """Get all generators assocaited with this part"""
+      from models import storage
+      generators = storage.all(Generator)
+      return [generator for generator in generator.values() if self.id in generator.part_ids]
+    
+    @generators.setter
+    def generators(self, obj):
+      """Add a generator to this part"""
+      if obj is not None and isinstance(obj, Generator):
+        if obj.id not in self.generator_ids:
+          self.generator_ids.append(obj.id)
