@@ -6,11 +6,12 @@ from sqlalchemy.orm import sessionmaker, scoped_session
 from models.part import Part
 from models.base_model import Base
 from models.generator import Generator, generator_part
+from models.user import User
 from models.manufacturer import Manufacturer
 from os import getenv
 
 classes = {"Part": Part, "Generator": Generator,
-           "Manufacturer": Manufacturer}
+           "Manufacturer": Manufacturer, "User": User}
 
 class DBStorage:
   '''database storage engine for mysql storage'''

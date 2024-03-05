@@ -6,6 +6,7 @@ import readline
 import json
 from models.base_model import BaseModel
 from models.manufacturer import Manufacturer
+from models.user import User
 from models.generator import Generator
 from models.part import Part
 from models import storage
@@ -26,7 +27,7 @@ class PartCommand(cmd.Cmd):
   prompt: str = "(efod) "
   file = None
   class_name = {
-    'BaseModel': BaseModel, 'Manufacturer': Manufacturer,
+    'BaseModel': BaseModel, 'Manufacturer': Manufacturer, 'User': User,
     'Generator': Generator, 'Part': Part
   }
 
